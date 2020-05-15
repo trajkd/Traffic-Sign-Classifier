@@ -86,9 +86,9 @@ To train the model, I used an Adam optimizer, a batch size of 128 and a learning
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 98.2%
-* validation set accuracy of 94.6%
-* test set accuracy of 92.8%
+* training set accuracy of 98.3%
+* validation set accuracy of 95.3%
+* test set accuracy of 93.0%
 
 An iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen? 
@@ -112,9 +112,13 @@ Here are five German traffic signs that I found on the web:
 ![17. No entry][image7] ![12. Priority road][image8]
 
 The first image might be difficult to classify because the sign is a little skewed.
+
 The second image might be difficult to classify because a portion of it is hidden by leaves and the shape is very similar to several other signs.
+
 The third image might be difficult to classify because the number inside the sign is written in a relatively small size and is enclosed in a panel.
+
 The fourth image might be difficult to classify because the red background can mistakenly classify it as a stop sign.
+
 The fifth image might be difficult to classify because a portion of it is hidden by leaves and is a little skewed.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
@@ -130,41 +134,41 @@ Here are the results of the prediction:
 | Priority Road 		| Priority Road      							|
 
 
-The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. This compares slightly favorably to the accuracy on the test set of 92.8%.
+The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. This compares slightly favorably to the accuracy on the test set of 93.0%.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
 
 The code for making predictions on my final model is located in the 26th cell of the Ipython notebook.
 
-For the first image, the model is extremely sure that this is a Turn right ahead sign (probability of 0.996), and the image does contain a Turn right ahead sign. The top five soft max probabilities were
+For the first image, the model is moderately sure that this is a Turn right ahead sign (probability of 0.70), and the image does contain a Turn right ahead sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .996         			| Turn right ahead								| 
-| .00     				| Turn left ahead								|
-| .00	      			| Roundabout mandatory			 				|
-| .00					| Ahead only									|
-| .00				    | Go straight or left  							|
+| .70         			| Turn right ahead								| 
+| .18     				| Ahead only									|
+| .12	      			| Turn left ahead				 				|
+| .004					| Go straight or right							|
+| .002				    | Children crossing  							|
 
-For the second image, the model is extremely sure that this is a General caution sign (probability of 0.97), but the image contains a Pedestrians sign. The top five soft max probabilities were
+For the second image, the model is extremely sure that this is a General caution sign (probability of 1.00), but the image contains a Pedestrians sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .97         			| General caution								| 
-| .02	      			| Traffic signals  				 				|
-| .00				    | Speed limit (70km/h) 							|
-| .00     				| Wild animals crossing							|
+| 1.00         			| General caution								| 
+| .00	      			| Traffic signals  				 				|
+| .00				    | Pedestrians 		 							|
+| .00     				| Speed limit (70km/h)							|
 | .00					| Road work										|
 
-For the third image, the model is slightly sure that this is a Children crossing sign (probability of 0.42), but the image contains a Speed limit (30km/h) sign. The top five soft max probabilities were
+For the third image, the model is slightly sure that this is a Yield sign (probability of 0.22), but the image contains a Speed limit (30km/h) sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .42         			| Children crossing								| 
-| .33     				| End of all speed and passing limits			|
-| .12					| End of no passing  							|
-| .04	      			| Beware of ice/snow			 				|
-| .03				    | Keep right		  							|
+| .22         			| Children crossing								| 
+| .20     				| End of all speed and passing limits			|
+| .18					| Turn left ahead   							|
+| .18	      			| End of speed limit (80km/h)	 				|
+| .08				    | Speed limit (50km/h)							|
 
 For the fourth image, the model is extremely sure that this is a No entry sign (probability of 1.00), and the image does contain a No entry sign. The top five soft max probabilities were
 
@@ -172,16 +176,16 @@ For the fourth image, the model is extremely sure that this is a No entry sign (
 |:---------------------:|:---------------------------------------------:| 
 | 1.00         			| No entry										| 
 | .00     				| Stop 											|
-| .00	      			| Speed limit (70km/h)			 				|
-| .00				    | Wild animals crossing 						|
-| .00					| Bicycles crossing								|
+| .00	      			| Yield							 				|
+| .00				    | Bumpy road 			 						|
+| .00					| Slippery road 								|
 
-For the fifth image, the model is extremely sure that this is a Priority Road sign (probability of 0.99), and the image does contain a Priority Road sign. The top five soft max probabilities were
+For the fifth image, the model is extremely sure that this is a Priority Road sign (probability of 1.00), and the image does contain a Priority Road sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        							| 
 |:---------------------:|:-----------------------------------------------------:| 
-| .99         			| Priority Road 										| 
-| .00   				| No entry									  		    |
-| .00					| End of all speed and passing limits				    |
-| .00	      			| End of no passing									    |
-| .00				    | End of no passing by vehicles over 3.5 metric tons 	|
+| 1.00         			| Priority Road 										| 
+| .00   				| Yield										  		    |
+| .00					| Stop 												    |
+| .00	      			| End of all speed and passing limits				    |
+| .00				    | No entry 											 	|
