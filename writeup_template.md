@@ -30,7 +30,7 @@ The goals / steps of this project are the following:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/trajkd/Traffic-Sign-Classifier.git)
 
 ### Data Set Summary & Exploration
 
@@ -92,14 +92,23 @@ My final model results were:
 
 An iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen? 
+
 I used the LeNet architecture as suggested in the lesson.
+
 * What were some problems with the initial architecture?
+
 Because of overfitting the accuracy of the initial architecture was lower than 93% on the validation set.
+
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+
 Two dropout layers were added to the LeNet architecture.
+
 * Which parameters were tuned? How were they adjusted and why?
+
 The batch size, learning rate, epochs and keep probability were initially set to a reasonable value and never adjusted as they were already keeping the accuracy high.
+
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+
 They are good techniques for reducing overfitting and thus improving accuracy.
 
 ### Test a Model on New Images
